@@ -6,12 +6,12 @@ const app = express();
 
 const books = [];
 
-if (process.env.NODE_ENV === "production") {
+/* if (process.env.NODE_ENV === "production") {
   app.use(express.static("views"));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname,  "views", "index.ejs"));
   });
-}
+} */
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
