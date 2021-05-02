@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "heroku-postbuild": "npm install --save app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "npm install"
   },
   "author": "Sam Tindall",
   "license": "",
