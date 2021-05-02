@@ -1,1 +1,1 @@
-web: node week2/index.js
+web: npm start
