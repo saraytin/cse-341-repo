@@ -5,6 +5,7 @@
             <% books.forEach((book) => { %>
                 <section class="book">
                     <div><h3><%= book.name %></h3></div>
+                    <p>by <%= book.author %></p>
                     <p><%= book.summary %></p>
                 </section>
             <% }) %>
