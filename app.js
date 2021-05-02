@@ -7,9 +7,9 @@ const app = express();
 const books = [];
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
+  app.use(express.static("views"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,  "build", "index.ejs"));
+    res.sendFile(path.resolve(__dirname,  "views", "index.ejs"));
   });
 }
 
