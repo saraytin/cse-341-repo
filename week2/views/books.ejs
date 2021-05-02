@@ -1,0 +1,15 @@
+<%- include('includes/head.ejs') %>
+    <h2>Books</h2>
+    <% if (books.length > 0) { %>
+        <div class="display">
+            <% books.forEach((book) => { %>
+                <section class="book">
+                    <div><h3><%= book.name %></h3></div>
+                    <p><%= book.summary %></p>
+                </section>
+            <% }) %>
+            </div>
+    <% } else { %>
+        <h2>Nothing Here</h2>
+    <% } %>
+<%- include('includes/end.ejs') %>
