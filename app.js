@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/views'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res, next) => {
+app.get('week2/', (req, res, next) => {
   res.render('index', { pageTitle: 'Add Book', pageDesc: 'Add a book to the list' });
 });
 
