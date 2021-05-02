@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "heroku-postbuild": "npm install --save app.js && npm run build --save app.js"
+    "heroku-postbuild": "npm install --save app.js"
   },
   "author": "Sam Tindall",
   "license": "",
