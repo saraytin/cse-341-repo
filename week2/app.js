@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -29,4 +30,4 @@ app.post('/add-book', (req, res, next) => {
   res.redirect('/books');
 });
 
-app.listen(3000);
+app.listen(PORT);
