@@ -1,0 +1,71 @@
+:root {
+    --background-color: #404040;
+    --text-color: #ffffff;
+    --dark-accent: #004516;
+    --light-accent: #39b360;
+
+    --heading-font: 'Krona One', sans-serif;
+    --body-font: 'Rubik', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+}
+
+p, a, li, span {
+    font-family: var(--body-font);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, main, footer {
+    max-width: 60%;
+    margin: auto;
+}
+
+header {
+    text-align: right;
+    margin-bottom: 3rem;
+}
+
+header div#header-name {
+    font-size: 1.2rem;
+}
+
+div.form-area {
+    width: 20rem;
+    text-align: right;
+    line-height: 2rem;
+}
+
+div.form-area button {
+    background-color: var(--light-accent);
+    margin-top: 0.5rem;
+}
+
+div.display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.display section {
+    background-color: var(--dark-accent);
+    border: 3px solid var(--light-accent);
+}
+
+div.display section div {
+    text-align: center;
+}
+
+div.display section p {
+    padding: 0.5rem;
+}
+
+footer {
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 0.8rem;
+}

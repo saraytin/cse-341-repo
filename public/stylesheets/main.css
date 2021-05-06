@@ -1,0 +1,69 @@
+.jumbotron {
+  background: #0065BD;
+  color: white;
+  padding-bottom: 80px; 
+}
+
+.jumbotron .btn-primary {
+  background: #845ac7;
+  border-color: #845ac7; 
+}
+
+.jumbotron .btn-primary:hover {
+  background: #7646c1; 
+}
+  
+.jumbotron p {
+  color: #d9ccee;
+  max-width: 75%;
+  margin: 1em auto 2em; 
+}
+  
+.navbar + .jumbotron {
+  margin-top: -20px; 
+}
+  
+.jumbotron .lang-logo {
+  display: block;
+  background: #B01302;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 2px solid white; 
+}
+.jumbotron .lang-logo img {
+  max-width: 100%; 
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+}
+.prove02 input{
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+.prove02 button{
+  margin: 1rem 0;
+}
+.prove02 section{
+  padding-bottom: 1rem;
+}
+.ta03{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.ta03 img{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ta03 div:nth-child(1){
+  grid-column: 1/3;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+}
