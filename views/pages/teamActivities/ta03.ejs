@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../../includes/header.ejs %>
+	</head>
+
+	<body>
+		<% include ../../includes/nav.ejs %>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1><%= title %></h1>
+				<p>This is the placeholder for Team Activity 03</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="ta03">
+				<div>
+					<form action="/ta03/search" method="post">
+						<label>Search</label>
+						<input type="text" name="search" id="search" size="50" value="<%=search%>" />
+						<button type="submit">Search</button>
+					</form>
+				</div>
+				<% for (e of data) {%>
+				<img src="<%=e.imageUrl%>" alt="<%=e.name%>" />
+				<div>
+					<h2><%=e.name%></h2>
+					<h3>Price: <%=e.price%></h3>
+					<p><%=e.description%></p>
+					<p>
+						<b>
+							<% for (t of e.tags) {%> <% if (e.tags.indexOf(t) < e.tags.length-1) {%> <%=t%>, <% } else {%> <%=t%>
+							<%}}%>
+						</b>
+					</p>
+				</div>
+				<%}%>
+			</div>
+		</div>
+	</body>
+</html>

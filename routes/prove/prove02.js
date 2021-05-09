@@ -17,21 +17,21 @@ app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({ extended: false })); */
 
 router.get('/', (req, res, next) => {
-  res.render('pages/prove03', { pageTitle: 'Add Book', pageDesc: 'Add a book to the list' });
+	res.render('pages/prove/prove02', { pageTitle: 'Add Book', pageDesc: 'Add a book to the list' });
 });
 
 router.get('/books', (req, res, next) => {
-  res.render('pages/books', {
-    pageTitle: 'Display Books',
-    pageDesc: 'Displaying the books you added',
-    books: books,
-    hasBooks: books.length > 0
-  });
+	res.render('pages/prove/books', {
+		pageTitle: 'Display Books',
+		pageDesc: 'Displaying the books you added',
+		books: books,
+		hasBooks: books.length > 0,
+	});
 });
 
 router.post('/add-book', (req, res, next) => {
-  books.push({ name: req.body.title, summary: req.body.summary, author: req.body.author });
-  res.redirect('/prove03/books');
+	books.push({ name: req.body.title, summary: req.body.summary, author: req.body.author });
+	res.redirect('books');
 });
 
 module.exports = router;
