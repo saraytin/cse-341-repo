@@ -26,6 +26,8 @@ const ta03Routes = require("./routes/teamActivities/ta03a");
 const ta04Routes = require("./routes/teamActivities/ta04");
 const prove02Routes = require("./routes/prove/prove02");
 const prove08Routes = require("./routes/prove/prove08");
+const prove09Routes = require("./routes/prove/prove09");
+const prove10Routes = require("./routes/prove/prove10");
 
 app
   .use(express.static(path.join(__dirname, "public")))
@@ -43,6 +45,8 @@ app
   .use("/teamActivities/ta04", ta04Routes)
   .use("/prove/prove02", prove02Routes)
   .use("/prove/prove08", prove08Routes)
+  .use("/prove/prove09", prove09Routes)
+  .use("/prove/prove10", prove10Routes)
   .get(
     "/",
     /* routes */ (req, res, next) => {

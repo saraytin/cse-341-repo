@@ -1,0 +1,30 @@
+<% include ../../includes/header.ejs %>
+<title><%= title %></title>
+<link href="/stylesheets/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<% include ../../includes/nav.ejs %>
+<div class="container">
+    <h1>Pokemon:</h1>
+    <div class="row m-0 p-0 justify-content-center">
+        <% pokemonList.forEach( pokemon => { %>
+            <div class="col-5 m-0 p-0 pt-2 pb-2 pokemon"><h4><%=pokemon.name.toUpperCase()%></h4></div>
+        <% }); %>
+    </div>
+    
+    <div class="row justify-content-center m-0 p-0">
+        <% if(page != 1) { %>
+            <a href="./1"><button class="btn btn-secondary m-2">First</button></a>
+            <a href="./<%=parseInt(page) - 1%>"><button class="btn btn-secondary m-2">Previous</button></a>
+        <% } %>
+        
+        <button class="btn btn-primary m-2"><%=page%></button>
+        
+        <% if(page != 112) { %>
+            <a href="./<%=parseInt(page) + 1%>"><button class="btn btn-secondary m-2">Next</button></a>
+            <a href="./112"><button class="btn btn-secondary m-2">Last</button></a>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
