@@ -1,36 +1,39 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-	<div class="container">
-		<ul class="nav navbar-nav">
-			<li>
-				<a href="/" style="padding: 0 2rem; margin: 0"
-					><img class="logo" src="/images/BYUI-logo.png" alt="BYU Idaho logo"
-				/></a>
-			</li>
-			<li class="<%= path === '/' ? 'active' : ''%>">
-				<a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					Team Activities <span class="caret"></span
-				></a>
-				<ul class="dropdown-menu" role="menu">
-					<li class="<%= path === '/teamActivities/ta01' ? 'active' : ''%>"><a href="/teamActivities/ta01">TA01</a></li>
-					<li class="<%= path === '/teamActivities/ta02' ? 'active' : ''%>"><a href="/teamActivities/ta02">TA02</a></li>
-					<li class="<%= path === '/teamActivities/ta03' ? 'active' : ''%>"><a href="/teamActivities/ta03">TA03</a></li>
-					<li class="<%= path === '/teamActivities/ta04' ? 'active' : ''%>"><a href="/teamActivities/ta04">TA04</a></li>
-				</ul>
-			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					Prove Activities <span class="caret"></span
-				></a>
-				<ul class="dropdown-menu" role="menu">
-					<li class="<%= path === '/prove/prove02' ? 'active' : ''%>"><a href="/prove/prove02">Prove 02</a></li>
-					<li class="<%= path === '/prove/prove08' ? 'active' : ''%>"><a href="/prove/prove08">Prove 08</a></li>
-					<li class="<%= path === '/prove/prove09/pokemon/1' ? 'active' : ''%>"><a href="/prove/prove09/pokemon/1">Prove 09</a></li>
-					<li class="<%= path === '/prove/prove10' ? 'active' : ''%>"><a href="/prove/prove10">Prove 10</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/" style="padding: 0 2rem; margin: 0"
+          ><img class="logo" src="/images/BYUI-logo.png" alt="BYU Idaho logo"
+        /></a>
+      </li>
+      <li class="<%= path === '/' ? 'active' : ''%>">
+        <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Team Activities <span class="caret"></span
+        ></a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="<%= path === '/teamActivities/ta01' ? 'active' : ''%>"><a href="/teamActivities/ta01">TA01</a></li>
+          <li class="<%= path === '/teamActivities/ta02' ? 'active' : ''%>"><a href="/teamActivities/ta02">TA02</a></li>
+          <li class="<%= path === '/teamActivities/ta03' ? 'active' : ''%>"><a href="/teamActivities/ta03">TA03</a></li>
+          <li class="<%= path === '/teamActivities/ta04' ? 'active' : ''%>"><a href="/teamActivities/ta04">TA04</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Prove Activities <span class="caret"></span
+        ></a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="<%= path === '/prove/prove02' ? 'active' : ''%>"><a href="/prove/prove02">Prove 02</a></li>
+          <li class="<%= path === '/prove/prove08' ? 'active' : ''%>"><a href="/prove/prove08">Prove 08</a></li>
+          <li class="<%= path === '/prove/prove09/pokemon/1' ? 'active' : ''%>">
+            <a href="/prove/prove09/pokemon/1">Prove 09</a>
+          </li>
+          <li class="<%= path === '/prove/prove10' ? 'active' : ''%>"><a href="/prove/prove10">Prove 10</a></li>
+          <li class="<%= path === '/prove/prove11' ? 'active' : ''%>"><a href="/prove/prove11">Prove 11</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </nav>

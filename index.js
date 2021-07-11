@@ -28,8 +28,9 @@ const prove02Routes = require("./routes/prove/prove02");
 const prove08Routes = require("./routes/prove/prove08");
 const prove09Routes = require("./routes/prove/prove09");
 const prove10Routes = require("./routes/prove/prove10");
+const prove11Routes = require("./routes/prove/prove11");
 
-app
+const server = app
   .use(express.static(path.join(__dirname, "public")))
   .set("views", path.join(__dirname, "views"))
   .set("view engine", "ejs")
@@ -47,6 +48,7 @@ app
   .use("/prove/prove08", prove08Routes)
   .use("/prove/prove09", prove09Routes)
   .use("/prove/prove10", prove10Routes)
+  .use("/prove/prove11", prove11Routes)
   .get(
     "/",
     /* routes */ (req, res, next) => {
@@ -59,3 +61,14 @@ app
     res.render("pages/404", { title: "404 - Page Not Found", path: req.url });
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+const io = require("socket.io")(server);
+
+io.on("connection", (socket) => {
+  console.log("Client connected");
+
+  socket.on("new-name", () => {
+    // Someone added a name! Tell everyone else to update the list.
+    socket.broadcast.emit("update-list");
+  });
+});
