@@ -14,10 +14,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const session = require("express-session");
 /* const routes = require('./routes'); */
 const PORT = process.env.PORT || 5000; // So we can run on heroku || (OR) localhost:5000
 
 const app = express();
+
+const liveChat = require("./routes/prove/liveChat");
 
 // Route setup. You can implement more in the future!
 const ta01Routes = require("./routes/teamActivities/ta01");
@@ -49,6 +52,16 @@ const server = app
   .use("/prove/prove09", prove09Routes)
   .use("/prove/prove10", prove10Routes)
   .use("/prove/prove11", prove11Routes)
+  .use(
+    session({
+      // Simple and not very secure session
+      secret: "random_text",
+      cookie: {
+        httpOnly: false, // Permit access to client session
+      },
+    })
+  )
+  .use("/prove/prove12", liveChat)
   .get(
     "/",
     /* routes */ (req, res, next) => {
@@ -67,8 +80,32 @@ const io = require("socket.io")(server);
 io.on("connection", (socket) => {
   console.log("Client connected");
 
-  socket.on("new-name", () => {
-    // Someone added a name! Tell everyone else to update the list.
-    socket.broadcast.emit("update-list");
-  });
+  socket
+    .on("new-name", () => {
+      // Someone added a name! Tell everyone else to update the list.
+      socket.broadcast.emit("update-list");
+    })
+    .on("disconnect", () => {
+      console.log("A client disconnected!");
+    })
+    .on("newUser", (username, time) => {
+      // A new user logs in.
+      const message = `${username} has logged on.`;
+      // Tell other users someone has logged on.
+      socket.broadcast.emit("newMessage", {
+        message,
+        time,
+        from: "admin",
+      });
+    })
+    .on("message", (data) => {
+      // Receive a new message
+      console.log("Message received");
+      console.log(data);
+      // This one is simple. Just broadcast the data we received.
+      // We can use { ...data } to copy the data object.
+      socket.broadcast.emit("newMessage", {
+        ...data,
+      }); // Note, only emits to all OTHER clients, not sender.
+    });
 });
